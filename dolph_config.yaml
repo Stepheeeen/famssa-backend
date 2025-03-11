@@ -1,0 +1,11 @@
+port: 3300
+database:
+  mongo:
+    url: sensitive
+middlewares:
+  cors:
+    activate: true
+    origin: "*"
+routing:
+  base: "/v1"
+jsonLimit: 2mb
