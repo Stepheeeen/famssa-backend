@@ -1,4 +1,4 @@
-port: 3300
+port: 4000
 database:
   mongo:
     url: sensitive
