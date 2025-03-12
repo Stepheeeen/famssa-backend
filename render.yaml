@@ -11,5 +11,5 @@ services:
     envVars:
       - key: PORT
         value: 3300
-      - key: MONGODB_URL
+      - key: MONGO_URL
         value: mongodb+srv://stephenon56:X1sicTLDiuVII7Ue@cluster0.sezfp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
