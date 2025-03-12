@@ -5,7 +5,7 @@ services:
     plan: free
     repo: https://github.com/Stepheeeen/famssa-backend
     branch: main
-    buildCommand: npm install @dolphjs/cli && npm run build
+    buildCommand: npm install @dolphjs/cli @swc/core @swc/cli ts-node && npm run build
     startCommand: npm start
     autoDeploy: true
     envVars:
