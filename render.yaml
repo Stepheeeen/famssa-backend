@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: famssa-backend
+    env: node
+    plan: free
+    repo: https://github.com/Stepheeeen/famssa-backend
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 3300
+      - key: MONGODB_URI
+        value: mongodb+srv://stephenon56:X1sicTLDiuVII7Ue@cluster0.sezfp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
