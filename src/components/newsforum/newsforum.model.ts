@@ -11,6 +11,7 @@ export interface INewsForum extends Document {
 
 const NewsForumSchema = new Schema(
   {
+    _id: { type: Schema.Types.ObjectId, required: false },
     title: { type: String, required: true },
     summary: { type: String, required: true },
     link: { type: String, required: false },
