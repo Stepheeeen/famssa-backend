@@ -13,7 +13,7 @@ COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN npm install --legacy-peer-deps --omit=dev && \
-    npm install --global @dolphjs/cli && \
+    npm install --global @dolphjs/cli @swc/core @swc/cli && \
     npm cache clean --force && \
     rm -rf /tmp/*
 
