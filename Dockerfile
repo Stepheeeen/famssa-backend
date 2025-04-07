@@ -21,7 +21,7 @@ RUN npm install --legacy-peer-deps --omit=dev && \
 COPY . .
 
 # Uncomment the following line if you need to build the application
-# RUN npm run build
+RUN npm run build
 
 # Stage 2: Runtime Stage
 FROM node:18-alpine
