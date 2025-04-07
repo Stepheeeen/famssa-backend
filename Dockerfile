@@ -12,7 +12,7 @@ ENV NODE_ENV=${NODE_ENV}
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps && \
+RUN npm install --legacy-peer-deps --omit=dev && \
     npm install --global @dolphjs/cli && \
     npm cache clean --force && \
     rm -rf /tmp/*
@@ -32,6 +32,9 @@ WORKDIR /usr/src/app
 # Copy built files and dependencies from the build stage
 COPY --from=build /usr/src/app .
 
+COPY --from=build /usr/local/lib/node_modules /usr/local/lib/node_modules
+COPY --from=build /usr/local/bin /usr/local/bin
+
 # Set environment variables
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -39,4 +42,4 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 EXPOSE 3300
 
 # Start the application
-CMD ["npm", "run", "dev:start"]
+CMD ["npm",  "start"]
